@@ -43,20 +43,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void UserInput(){
         EditText input = (EditText)findViewById(R.id.editText);
-        int inputInt =Integer.parseInt(input.getText().toString());
+        String message;
+        if(input.getText().toString().isEmpty()){
+            message = " Please enter a number";
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
+        }else {
 
-        if(checksqrt(inputInt)==true &&checktrig(inputInt)==true){
-            Toast.makeText(this, input.getText().toString() + " is a square number and a triangular number", Toast.LENGTH_SHORT).show();
-        }else if(checksqrt(inputInt)==false&&checktrig(inputInt)==true){
-            //Log.i(input.getText().toString(), " is a square number");
-            Toast.makeText(this, input.getText().toString() + " is not a square number but a triangular number", Toast.LENGTH_SHORT).show();
-        }else if(checksqrt(inputInt)==true&&checktrig(inputInt)==false){
-            Toast.makeText(this, input.getText().toString() + " is a square number but not a triangular number", Toast.LENGTH_SHORT).show();
-        }else{
-            Toast.makeText(this, input.getText().toString() + " is not square number or a triangular number", Toast.LENGTH_SHORT).show();
+            int inputInt = Integer.parseInt(input.getText().toString());
+
+            if (checksqrt(inputInt) == true && checktrig(inputInt) == true) {
+                Toast.makeText(this, input.getText().toString() + " is a square number and a triangular number", Toast.LENGTH_SHORT).show();
+            } else if (checksqrt(inputInt) == false && checktrig(inputInt) == true) {
+                //Log.i(input.getText().toString(), " is a square number");
+                Toast.makeText(this, input.getText().toString() + " is not a square number but a triangular number", Toast.LENGTH_SHORT).show();
+            } else if (checksqrt(inputInt) == true && checktrig(inputInt) == false) {
+                Toast.makeText(this, input.getText().toString() + " is a square number but not a triangular number", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, input.getText().toString() + " is not square number or a triangular number", Toast.LENGTH_SHORT).show();
+            }
         }
     }
     public void click(View view){
         UserInput();
+        System.out.println("hello how r u ?");
     }
 }
