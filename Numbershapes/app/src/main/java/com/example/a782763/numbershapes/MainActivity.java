@@ -65,6 +65,6 @@ public class MainActivity extends AppCompatActivity {
     }
     public void click(View view){
         UserInput();
-        System.out.println("hello how r u ?");
+
     }
 }
